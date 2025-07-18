@@ -1,6 +1,10 @@
-# React + TypeScript + Vite
+# Portfolio-Polinag
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website built with React + TypeScript + Vite.
+
+This project provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+## Technology Stack
 
 Currently, two official plugins are available:
 
@@ -67,3 +71,6 @@ export default tseslint.config([
   },
 ])
 ```
+=======
+# Portfolio-Polinag
+>>>>>>> bdec17936199c38f394dc90fc2fa78ba9000115a
