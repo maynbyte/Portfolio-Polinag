@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Github, Linkedin, } from "lucide-react";
 import profilePic from "@/assets/profile.jpg"; 
 
 export default function About() {
@@ -53,33 +52,6 @@ export default function About() {
           passionate about continuous learning and sharing knowledge with the
           community.
         </p>
-
-        {/* Socials */}
-        <div
-          className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-
-          <div className="flex gap-4 text-gray-600 dark:text-gray-300">
-            <a
-              href="https://github.com/maynbyte"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <Github className="w-6 h-6 hover:text-black dark:hover:text-white transition" />
-            </a>
-            <a
-              href="https://linkedin.com/in/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-6 h-6 hover:text-blue-700 transition" />
-            </a>
-          </div>
-        </div>
 
         {/* Tech Stack */}
         <div
