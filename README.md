@@ -2,14 +2,15 @@
 
 A personal portfolio website built with React + TypeScript + Vite.
 
-This project provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
 ## Technology Stack
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Shadcn/ui
+- AOS (Animate On Scroll)
 
 ## Expanding the ESLint configuration
 
@@ -71,4 +72,7 @@ export default tseslint.config([
   },
 ])
 ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4bf4efd0ac27faad333acba7c21fe9f4f8c09a52
