@@ -71,6 +71,3 @@ export default tseslint.config([
   },
 ])
 ```
-=======
-# Portfolio-Polinag
->>>>>>> bdec17936199c38f394dc90fc2fa78ba9000115a
