@@ -1,18 +1,36 @@
-import "./App.css";
-import { Button } from "./components/ui/button";
+import { lazy, Suspense } from "react";
+import { BrowserRouter as Router, useLocation, Routes, Route } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import ScrollToTop from "./components/ScrollToTop";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const ThankYou = lazy(() => import("./pages/ThankYou"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <>
+      <ScrollToTop />
+      <AnimatePresence mode="wait">
+        <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/thanks" element={<ThankYou />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </AnimatePresence>
+    </>
+  );
+}
 
 function App() {
   return (
-    <>
-      <div className="text-center">
-        <h1 className="text-5xl text-center p-16">
-          Vite + React + Tailwind CSS
-        </h1>
-        <Button className="bg-blue-500 text-white hover:bg-blue-700">
-          Click Me
-        </Button>
-      </div>
-    </>
+    <Router>
+      <AnimatedRoutes />
+    </Router>
   );
 }
 
