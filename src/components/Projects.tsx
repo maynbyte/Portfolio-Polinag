@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Github, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Projects() {
@@ -14,18 +14,16 @@ export default function Projects() {
       title: "Fleet Management System — Fuel Theft Detection and GPS Tracking",
       description:
         "A comprehensive system for fleet operators to track vehicles via GPS, detect fuel theft in real-time, and monitor performance through a secure dashboard with live maps and analytics.",
-      tech: ["ReactJS", "Firebase", "Tailwind", "Shadcn UI", "ExpressJS", "Chart.js", "Node.js"],
+      tech: ["React", "Tailwind", "Shadcn UI", "Chart.js", "Leaflet", "Express.js", "Node.js", "Firebase"],
       live: "https://fleet-management-kappa.vercel.app/",
-      repo: "https://github.com/yourusername/devlink",
       image: "/images/fleet-thumb.png", 
     },
     {
       title: "Virtual Office — A booking system for office spaces",
       description:
         "A web application that allows teams and employees to book shared office spaces and meeting rooms. Includes role-based access, calendar view, availability tracking, and real-time booking management.",
-      tech: ["React", "Supabase", "Tailwind", "Shadcn UI", "Node.js"],
+      tech: ["React", "Tailwind", "Shadcn UI", "Node.js", "Supabase"],
       live: "https://book.incub8.space",
-      repo: "https://github.com/yourusername/taskwise",
       image: "/images/vo-thumb.png",
     },
   ];
@@ -68,15 +66,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center gap-4 text-sm">
-                  <a
-                    href={project.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 hover:underline"
-                  >
-                    <Github className="w-4 h-4" /> Code
-                  </a>
+                <div className="flex items-center text-sm">
                   <a
                     href={project.live}
                     target="_blank"

@@ -61,11 +61,14 @@ export default function About() {
         >
           {[
             "React",
-            "TypeScript",
-            "Next.js",
+            "Angular",
             "Tailwind CSS",
+            "Shadcn UI",
+            "Express.js",
             "Node.js",
-            "PostgreSQL",
+            "MongoDB",
+            "Firebase",
+            "Supabase",
           ].map((tech) => (
             <div
               key={tech}
