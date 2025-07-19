@@ -1,7 +1,14 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter as Router, useLocation, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  useLocation,
+  Routes,
+  Route,
+} from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import ScrollToTop from "./components/ScrollToTop";
+import NavbarSkeleton from "./components/Skeletons/NavbarSkeleton.tsx";
+import HeroSkeleton from "./components/Skeletons/HeroSkeleton.tsx";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
@@ -14,7 +21,14 @@ function AnimatedRoutes() {
     <>
       <ScrollToTop />
       <AnimatePresence mode="wait">
-        <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
+        <Suspense
+          fallback={
+            <div>
+              <NavbarSkeleton />
+              <HeroSkeleton />
+            </div>
+          }
+        >
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<HomePage />} />
             <Route path="/thanks" element={<ThankYou />} />

@@ -17,12 +17,12 @@ export default function Projects() {
       tech: ["ReactJS", "Firebase", "Tailwind", "Shadcn UI", "ExpressJS", "Chart.js", "Node.js"],
       live: "https://fleet-management-kappa.vercel.app/",
       repo: "https://github.com/yourusername/devlink",
-      image: "/images/fleet-thumb.png", // Place in /public/images/
+      image: "/images/fleet-thumb.png", 
     },
     {
       title: "Virtual Office — A booking system for office spaces",
       description:
-        "A project management tool with drag-and-drop tasks, team collaboration, and analytics dashboard.",
+        "A web application that allows teams and employees to book shared office spaces and meeting rooms. Includes role-based access, calendar view, availability tracking, and real-time booking management.",
       tech: ["React", "Supabase", "Tailwind", "Shadcn UI", "Node.js"],
       live: "https://book.incub8.space",
       repo: "https://github.com/yourusername/taskwise",
