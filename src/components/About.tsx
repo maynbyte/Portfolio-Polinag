@@ -37,9 +37,9 @@ export default function About() {
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          I'm a <strong>Full-stack Web Developer</strong> focused on
+          I'm a <strong>Full-stack Developer</strong> focused on
           building scalable web applications with technologies like{" "}
-          <strong>React</strong>, <strong>TypeScript</strong>, and{" "}
+          <strong>MongoDB</strong>, <strong>Express.js</strong>, <strong>React</strong>, and{" "}
           <strong>Node.js</strong>. I enjoy turning ideas into reality and
           solving real-world problems through clean, efficient code.
         </p>

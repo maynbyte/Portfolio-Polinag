@@ -16,7 +16,7 @@ export default function Hero() {
     <section className="min-h-[90vh] flex items-center justify-center bg-white px-6">
       <div className="max-w-3xl text-center">
         <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">
-          Full-Stack Software Engineer
+          Full-Stack Developer
         </p>
 
         <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4" data-aos="fade-up">
@@ -28,7 +28,7 @@ export default function Hero() {
           I specialize in{" "}
           <span className="text-blue-600 font-semibold">
             <Typewriter
-              words={["React", "TypeScript", "Next.js", "Tailwind", "Supabase"]}
+              words={["React", "Angular", "ASP.NET", "Express.js", "Node.js", "Supabase", "Firebase" , "MongoDB"]}
               loop
               cursor
               cursorStyle="|"
