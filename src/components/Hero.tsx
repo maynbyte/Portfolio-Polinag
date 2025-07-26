@@ -6,12 +6,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
-
-
 export default function Hero() {
   useEffect(() => {
-  AOS.init({ once: true, duration: 800 });
-}, []);
+    AOS.init({ once: true, duration: 800 });
+  }, []);
+
   return (
     <section className="min-h-[90vh] flex items-center justify-center bg-white px-6">
       <div className="max-w-3xl text-center">
@@ -20,15 +19,15 @@ export default function Hero() {
         </p>
 
         <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4" data-aos="fade-up">
-          Hi, I'm <span className="text-blue-600">Arwill Joshua</span> — I build
+          Hi, I'm <span className="text-cyan-600">Arwill Joshua</span> — I build
           scalable web apps with clean code & modern tools.
         </h1>
 
         <p className="text-lg text-gray-600 mb-6" data-aos="fade-up" data-aos-delay="100">
           I specialize in{" "}
-          <span className="text-blue-600 font-semibold">
+          <span className="text-cyan-600 font-semibold">
             <Typewriter
-              words={["React", "Angular", "ASP.NET", "Express.js", "Node.js", "Supabase", "Firebase" , "MongoDB"]}
+              words={["React", "Angular", "ASP.NET", "Express.js", "Node.js", "Supabase", "Firebase", "MongoDB"]}
               loop
               cursor
               cursorStyle="|"
@@ -42,9 +41,17 @@ export default function Hero() {
           <Button size="lg" className="px-6">
             View Projects <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
-          <Button variant="outline" size="lg" className="px-6">
+
+          {/* Download Resume Button */}
+          <a
+            href="/Polinag-Resume.pdf"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2 border border-cyan-600 text-cyan-600 rounded-md hover:bg-cyan-50 transition text-sm font-medium"
+          >
             Download Resume
-          </Button>
+          </a>
         </div>
       </div>
     </section>
