@@ -54,9 +54,7 @@ export default function Navbar() {
             >
               {/* Header: Logo + Close */}
               <div className="flex justify-between items-center mb-4">
-                <span className="text-lg font-semibold text-blue-600">
-                  Arwill Joshua
-                </span>
+                <Logo />
                 <SheetClose asChild>
                   <Button variant="ghost" size="icon" aria-label="Close">
                     <X className="w-5 h-5" />
