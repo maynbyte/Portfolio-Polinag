@@ -7,6 +7,7 @@ import {
   SheetContent,
   SheetClose,
 } from "@/components/ui/sheet";
+import Logo from "./Logo.tsx";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,10 +21,8 @@ export default function Navbar() {
   return (
     <header className="w-full fixed top-0 z-50 bg-white border-b border-gray-200">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo / Name */}
-        <h1 className="text-xl font-bold tracking-tight text-blue-600">
-          Arwill Joshua
-        </h1>
+      {/* Logo */}
+      <Logo/>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6">
