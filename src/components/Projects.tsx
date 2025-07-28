@@ -1,11 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ExternalLink } from "lucide-react";
 
 export default function Projects() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     AOS.init({ once: true });
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const projects = [
@@ -47,43 +56,60 @@ export default function Projects() {
         </h2>
 
         <div className="grid gap-10 md:grid-cols-2">
-          {projects.map((project, idx) => (
-            <div
-              key={project.title}
-              className="relative group overflow-hidden rounded-xl shadow-md h-72 md:h-80"
-              data-aos="fade-up"
-              data-aos-delay={idx * 100}
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+          {projects.map((project, idx) => {
+            const isActive = isMobile ? activeIndex === idx : false;
 
-              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white p-6 flex flex-col justify-center">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-sm mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 text-xs mb-4">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 bg-white/10 border border-white/20 rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm underline hover:text-cyan-300"
+            return (
+              <div
+                key={project.title}
+                className="relative group overflow-hidden rounded-xl shadow-md h-72 md:h-80 cursor-pointer"
+                data-aos="fade-up"
+                data-aos-delay={idx * 100}
+                onClick={() =>
+                  isMobile ? setActiveIndex(activeIndex === idx ? null : idx) : null
+                }
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+
+                <div
+                  className={`absolute inset-0 bg-black/70 text-white p-6 flex flex-col justify-center transition-opacity duration-300 ${
+                    isMobile
+                      ? isActive
+                        ? "opacity-100"
+                        : "opacity-0"
+                      : "opacity-0 group-hover:opacity-100"
+                  }`}
                 >
-                  <ExternalLink className="w-4 h-4" /> Live
-                </a>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 text-xs mb-4">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 bg-white/10 border border-white/20 rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm underline hover:text-cyan-300"
+                  >
+                    <ExternalLink className="w-4 h-4" /> Live
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
