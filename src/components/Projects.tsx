@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ExternalLink } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 
 export default function Projects() {
   useEffect(() => {
@@ -14,9 +13,18 @@ export default function Projects() {
       title: "Fleet Management System — Fuel Theft Detection and GPS Tracking",
       description:
         "A comprehensive system for fleet operators to track vehicles via GPS, detect fuel theft in real-time, and monitor performance through a secure dashboard with live maps and analytics.",
-      tech: ["React", "Tailwind", "Shadcn UI", "Chart.js", "Leaflet", "Express.js", "Node.js", "Firebase"],
+      tech: [
+        "React",
+        "Tailwind",
+        "Shadcn UI",
+        "Chart.js",
+        "Leaflet",
+        "Express.js",
+        "Node.js",
+        "Firebase",
+      ],
       live: "https://fleet-management-kappa.vercel.app/",
-      image: "/images/fleet-thumb.png", 
+      image: "/images/fleet-thumb.png",
     },
     {
       title: "Virtual Office — A booking system for office spaces",
@@ -40,44 +48,41 @@ export default function Projects() {
 
         <div className="grid gap-10 md:grid-cols-2">
           {projects.map((project, idx) => (
-            <Card
+            <div
               key={project.title}
-              className="overflow-hidden shadow-md"
+              className="relative group overflow-hidden rounded-xl shadow-md h-72 md:h-80"
               data-aos="fade-up"
               data-aos-delay={idx * 100}
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-                  {project.description}
-                </p>
+
+              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white p-6 flex flex-col justify-center">
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-sm mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 text-xs mb-4">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded"
+                      className="px-2 py-1 bg-white/10 border border-white/20 rounded"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center text-sm">
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 hover:underline"
-                  >
-                    <ExternalLink className="w-4 h-4" /> Live
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm underline hover:text-cyan-300"
+                >
+                  <ExternalLink className="w-4 h-4" /> Live
+                </a>
+              </div>
+            </div>
           ))}
         </div>
       </div>
